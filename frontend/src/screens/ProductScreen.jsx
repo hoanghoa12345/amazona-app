@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Rating from '../components/Rating'
 import data from '../data'
 
@@ -7,9 +8,10 @@ const ProductScreen = (props) => {
   if(!product) return <div>Product Not Found</div>
   return (
     <div>
+      <Link to="/">Back to result</Link>
       <div className="row top">
         <div className="col-2">
-          <img class="large" src={product.image} alt={product.name} />
+          <img className="large" src={product.image} alt={product.name} />
         </div>
         <div className="col-1">
           <ul>
@@ -23,29 +25,31 @@ const ProductScreen = (props) => {
           </ul>
         </div>
         <div className="col-1">
-          <ul>
-            <li>
-              <div className="row">
-                <div>Price</div>
-                <div className="price">${product.price}</div>
-              </div>
-            </li>
-            <li>
-              <div className="row">
-                <div>Status</div>
-                <div>
-                  {product.countInStock > 0 ? (
-                    <span className="success">In Stock</span>
-                  ) : (
-                    <span className="error">Unavailable</span>
-                  )}
+          <div className="card card-body">
+            <ul>
+              <li>
+                <div className="row">
+                  <div>Price</div>
+                  <div className="price">${product.price}</div>
                 </div>
-              </div>
-            </li>
-            <li>
-              <button className="primary block">Add to Cart</button>
-            </li>
-          </ul>
+              </li>
+              <li>
+                <div className="row">
+                  <div>Status</div>
+                  <div>
+                    {product.countInStock > 0 ? (
+                      <span className="success">In Stock</span>
+                    ) : (
+                      <span className="error">Unavailable</span>
+                    )}
+                  </div>
+                </div>
+              </li>
+              <li>
+                <button className="primary block">Add to Cart</button>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
