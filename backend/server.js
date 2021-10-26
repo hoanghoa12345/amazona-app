@@ -10,7 +10,6 @@ app.get('/api/products/:id', (req, res) => {
   }else {
     res.status(404).json({message: 'Product Not Found'})
   }
-  res.send('Server is ready')
 })
 app.get('/', (req, res) => {
   res.send('Server is ready')
