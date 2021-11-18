@@ -1,7 +1,21 @@
+import bcrypt from 'bcryptjs';
 const data = {
+  users: [
+    {
+      name: 'Basir',
+      email: 'admin@example.com',
+      password: bcrypt.hashSync('1234', 8),
+      isAdmin: true,
+    },
+    {
+      name: 'John',
+      email: 'john@example.com',
+      password: bcrypt.hashSync('1234', 8),
+      isAdmin: false,
+    },
+  ],
   products: [
     {
-      _id: '1',
       name: 'Ao thun nu trang',
       category: 'Shirts',
       image: '/images/2908202130846_1.jpg',
@@ -13,7 +27,6 @@ const data = {
       description: 'High quality product',
     },
     {
-      _id: '2',
       name: 'Ao thun nu den',
       category: 'Shirts',
       image: '/images/2913202131345_1.jpg',
@@ -25,7 +38,6 @@ const data = {
       description: 'High quality product',
     },
     {
-      _id: '3',
       name: 'Ao thun nu xanh',
       category: 'Shirts',
       image: '/images/2915202131534_1.jpg',
@@ -37,7 +49,6 @@ const data = {
       description: 'High quality product',
     },
     {
-      _id: '4',
       name: 'Ao thun nu do',
       category: 'Shirts',
       image: '/images/2917202131755_1.jpg',
@@ -49,7 +60,6 @@ const data = {
       description: 'High quality product',
     },
     {
-      _id: '5',
       name: 'Ao phong nam bien xanh',
       category: 'Shirts',
       image: '/images/13052021040523_Dai_dien.jpg',
@@ -61,7 +71,6 @@ const data = {
       description: 'High quality product',
     },
     {
-      _id: '6',
       name: 'Ao thun nam trang',
       category: 'Shirts',
       image: '/images/13052021100514_Dai_dien.jpg',
@@ -73,7 +82,6 @@ const data = {
       description: 'High quality product',
     },
     {
-      _id: '7',
       name: 'Quan short nam',
       category: 'Pants',
       image: '/images/14052021030525_dai_dien.jpg',
@@ -85,7 +93,6 @@ const data = {
       description: 'High quality product',
     },
     {
-      _id: '8',
       name: 'Quan jean nam den',
       category: 'Pants',
       image: '/images/14052021030554_dai_dien.jpg',
@@ -97,7 +104,6 @@ const data = {
       description: 'High quality product',
     },
     {
-      _id: '9',
       name: 'Quan jean nam xanh',
       category: 'Pants',
       image: '/images/31032021090328_1.jpg',
@@ -108,7 +114,7 @@ const data = {
       numReviews: 20,
       description: 'High quality product',
     },
-  ]
-}
+  ],
+};
 
-export default data
+export default data;
